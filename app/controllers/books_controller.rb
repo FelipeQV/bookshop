@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @books = Book.all
@@ -15,6 +16,7 @@ class BooksController < ApplicationController
   end
 
   def create
+    before_action :authenticate_user!
     @book = Book.new(book_params)
     if @book.save
       redirect_to book_path(@book)
