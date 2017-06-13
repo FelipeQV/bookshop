@@ -10,10 +10,27 @@
 <br>
 <%@books.each do |book|%>
 <ul class = "list-unstyled">
+
+<% picture = book.photo? ? book.photo.path : 'chris-lawton-236413_qwg3qs' %>
+            <div class="card"
+            style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+            url('<%= cl_image_path picture, height: 500, width: 500, crop: :fill %>')">
+            <div class="card-category">Popular</div>
+            <div class="card-description">
+              <h2>
+                <%= book.title %>
+              </h2>
+
+            </div>
+          </div>
+
+
+
 <%=link_to book_path(book) do%>
 <li><%=book.title%></li>
 </ul>
 <%end%>
+</div>
   <%end%>
   </div>
 
