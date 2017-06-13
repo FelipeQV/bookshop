@@ -8,6 +8,7 @@
 
             <%= simple_form_for @book do |f| %>
             <% f.error_notification %>
+            <%= f.input :photos, as: :attachinary %>
             <%= f.input :title %>
             <%= f.input :author %>
             <%= f.input :price %>
