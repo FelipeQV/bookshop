@@ -1,9 +1,17 @@
-<h1 class = "text-center">Explore our best books</h1>
 
+<div class = "text-center">
+
+<h1>Explore our best books</h1>
+<br>
+
+<input type="string" name="search" placeholder="Look for book">
+<br>
+<br>
 <%@books.each do |book|%>
-<ul>
+<ul class = "list-unstyled">
 <%=link_to book_path(book) do%>
 <li><%=book.title%></li>
 </ul>
 <%end%>
   <%end%>
+  </div>
