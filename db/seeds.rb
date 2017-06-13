@@ -8,6 +8,10 @@
 
 Book.destroy_all
 
-Book.create(title: "A bag of bones", price: 19, author: "Stephen King")
-Book.create(title: "Death on the Nile", price: 9, author: "Agatha Christie")
-Book.create(title: "Buddhism Meditation", price: 7, author: "Ramiro Calle")
+user1 = User.create!(email: "test@test.com", password: "123456")
+user2 = User.create!(email: "test1@test.es", password: "1234567")
+user3 = User.create!(email: "test2@test.org", password: "1234568")
+
+Book.create!(title: "A bag of bones", price: 19, author: "Stephen King", user: user1)
+Book.create!(title: "Death on the Nile", price: 9, author: "Agatha Christie", user: user2)
+Book.create!(title: "Buddhism Meditation", price: 7, author: "Ramiro Calle", user: user3)
