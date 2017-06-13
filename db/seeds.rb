@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-
+Review.destroy_all
 Book.destroy_all
 User.destroy_all
 
@@ -18,3 +18,7 @@ user3 = User.create!(email: "test2@test.org", password: "1234568")
 Book.create!(title: "A bag of bones", price: 19, author: "Stephen King", user: user1)
 Book.create!(title: "Death on the Nile", price: 9, author: "Agatha Christie", user: user2)
 Book.create!(title: "Buddhism Meditation", price: 7, author: "Ramiro Calle", user: user3)
+
+Review.create!(content: "He is a great guy...", user: user1)
+Review.create!(content: "Horrible choice...", user: user2)
+Review.create!(content: "Friendly :)", user: user3)
