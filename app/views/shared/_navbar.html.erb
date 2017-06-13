@@ -36,20 +36,14 @@
       </div>
     </a>
 
-    <!-- Profile picture and dropdown -->
-    <div class="navbar-wagon-item">
-      <div class="dropdown">
-        <img src="http://placehold.it/50x50" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
-        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li><%= link_to "Profile", books_path %></li>
-          <li> <%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
-        </ul>
-      </div>
-    </div>
 
     <!-- Button (call-to-action) -->
-    <a href="" class="navbar-wagon-item navbar-wagon-button btn">Post stuff</a>
+  <%= link_to "Post a book", new_book_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
+
   </div>
+
+
+
 
   <!-- Dropdown appearing on mobile only -->
   <div class="navbar-wagon-item hidden-md hidden-lg">
@@ -62,14 +56,27 @@
       </ul>
     </div>
   </div>
-
+    <!-- Profile picture and dropdown -->
   <% if user_signed_in? %>
 
-  <%=current_user.first_name%>
-  <%=current_user.last_name%>
+  <div class="list-inline">
+  <%=current_user.first_name || current_user.email %>
+  <%=current_user.last_name %>
+  </div>
 
-<% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
-<%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+    <div class="navbar-wagon-item">
+      <div class="dropdown">
+       <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
+        <img <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li><%= link_to "Profile", books_path %></li>
+          <li> <%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+        </ul>
+      </div>
+    </div>
+
+
+
 
 <% else %>
 <%= link_to "log In", new_user_session_path %>
