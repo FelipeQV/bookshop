@@ -15,6 +15,7 @@ class ReviewsController < ApplicationController
   def create
    @user= User.find(params[:user_id])
     @review = Review.new(review_params)
+    raise
     @user.review = @user
     if @user.save
       redirect_to user_path(@user)
@@ -26,7 +27,7 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).premit(:content, :user_id)
+    params.require(:review).permit(:content, :user_id)
   end
 
 end

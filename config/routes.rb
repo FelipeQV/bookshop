@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     path: "sessions"
 
 
-  resources :users do
+  resources :users, except: :index do
     resources :reviews, only:[:new, :create, :index]
   end
   root to: 'pages#home'
