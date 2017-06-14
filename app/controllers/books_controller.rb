@@ -16,7 +16,6 @@ class BooksController < ApplicationController
   end
 
   def create
-    before_action :authenticate_user!
     @book = Book.new(book_params)
     if @book.save
       redirect_to book_path(@book)
