@@ -2,6 +2,9 @@
 
   <h2><%=@book.author%></h2>
   <h2><%="price: $"%><%=@book.price%></h2>
+<br>
+  <%= link_to "buy book", new_book_transaction_path(@book), class: "btn btn-primary"%>
+  <br>
 
   <% if @book.photo? %>
   <%= cl_image_path @book.photo.path, width: 200, height: 300, crop: :fill %>
