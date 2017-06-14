@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   mount Attachinary::Engine => "/attachinary"
 
-  resources :books
+  resources :books do
   #resources :reviews, only:[:new, :create, :index]
+  resources :transactions
+end
 
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' },
