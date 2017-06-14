@@ -6,6 +6,10 @@
   <div class="card-description">
     <%=link_to book_path(book) do%>
     <h2 style = "color: white"><%=book.title%></h2>
+    <p style = "color: white"><%=book.author%></p>
+    <p style = "color: white">$<%=book.price%>.00</p>
+
+
     <%end%>
   </div>
 </div>
