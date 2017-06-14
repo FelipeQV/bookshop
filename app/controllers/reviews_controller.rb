@@ -15,7 +15,9 @@ class ReviewsController < ApplicationController
   def create
    @user = User.find(params[:user_id])
     @review = Review.new(review_params)
-    @user.review = @user
+    @review.user = @user
+    @review.reviewer = current_user
+    raise
     if @user.save
       redirect_to user_path(@user)
     else
