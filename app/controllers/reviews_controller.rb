@@ -8,14 +8,13 @@ class ReviewsController < ApplicationController
   end
 
   def new
-    @user= User.find(params[:user_id])
+    @user = User.find(params[:user_id])
     @review = Review.new
   end
 
   def create
-   @user= User.find(params[:user_id])
+   @user = User.find(params[:user_id])
     @review = Review.new(review_params)
-    raise
     @user.review = @user
     if @user.save
       redirect_to user_path(@user)
