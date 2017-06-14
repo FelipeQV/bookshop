@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   #resources :reviews, only:[:new, :create, :index]
 
   devise_for :users,
-    controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+    controllers: { omniauth_callbacks: 'users/omniauth_callbacks' },
+    path: "sessions"
 
 
   resources :users do
