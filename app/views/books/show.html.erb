@@ -6,7 +6,10 @@
   <% if @book.photo? %>
   <%= cl_image_path @book.photo.path, width: 200, height: 300, crop: :fill %>
 <% end %>
-<%="Reviews for: "%><%= link_to @book.user.email, user_path(@book.user) %>
+
+<% if @book.user %>
+  <%="Reviews for: "%><%= link_to @book.user.email || @book.user.first_name, user_path(@book.user) %>
+<% end %>
 
 
   <%= link_to "home", books_path %>
