@@ -21,6 +21,9 @@ class TransactionsController < ApplicationController
   end
 
   def index
+      @book = Book.find(params[:book_id])
+
+
   end
 
 
