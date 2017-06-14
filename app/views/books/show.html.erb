@@ -1,8 +1,11 @@
   <div class="text-center"><h1><%= @book.title %></h1>
 
   <h2><%=@book.author%></h2>
-  <h2><%="price: $"%><%=@book.price%></h2>
+  <p><%="price: $"%><%=@book.price%></p>
 <br>
+ <p><strong><%="Description: "%></strong><%=@book.description%></p>
+ <br>
+
   <%= link_to "buy book", new_book_transaction_path(@book), class: "btn btn-primary"%>
   <br>
 
