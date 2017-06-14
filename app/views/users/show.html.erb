@@ -1,2 +1,16 @@
+
+
+
+<div class="text-center">
 <h1><%= @user.email %></h1>
+
+  <% @user.reviews.each do |review| %>
+  <ul class="list-inline">
+    <li><p> <%= review.content %></p></li>
+  </ul>
+  <% end %>
+
+
+
+
 
