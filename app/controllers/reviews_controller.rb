@@ -13,12 +13,11 @@ class ReviewsController < ApplicationController
   end
 
   def create
-   @user = User.find(params[:user_id])
+    @user = User.find(params[:user_id])
     @review = Review.new(review_params)
     @review.user = @user
     @review.reviewer = current_user
-    raise
-    if @user.save
+    if @review.save
       redirect_to user_path(@user)
     else
       render :new
