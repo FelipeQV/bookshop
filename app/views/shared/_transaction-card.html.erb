@@ -1,0 +1,18 @@
+
+<% picture = book.photo? ? book.photo.path : 'chris-lawton-236413_qwg3qs' %>
+
+<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path picture, height: 500, width: 1500, crop: :fit %>')">
+
+  <div class="card-category">"Confirmation number= "<%= @transaction.id %></div>
+  <div class="card-description">
+    <%=link_to book_path(book) do%>
+    <h2 style = "color: white"><%=@transaction.user.email%></h2>
+    <p style = "color: white"><%=@transaction.book.title%></p>
+    <p style = "color: white">$<%=@transaction.book.price%>.00</p>
+
+
+    <%end%>
+  </div>
+</div>
+
+

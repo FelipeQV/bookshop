@@ -1,3 +1,4 @@
+
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= cl_image_path("library_i1ryup",
 width: 1000, height: 500, crop: :fill) %>')" >
 <div class="banner-content">
@@ -5,14 +6,8 @@ width: 1000, height: 500, crop: :fill) %>')" >
 
     <p>Explore our best books</p>
 
-  <!-- Old form (not working, must in case...)-->
-<!--     <%= form_tag(books_path, :method => "get", id: "search-form") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search Books" %>
-    <%= submit_tag "Search", :name => nil %>
-    <% end %>
-    <% if @books.blank? %>
-      <h4>There are no books containing the term <%= params[:search] %>.</h4>
-    <% end %> -->
+
+
 
   <!-- New form -->
     <div class="navbar-wagon-right hidden-xs hidden-sm align-center" >
@@ -24,6 +19,7 @@ width: 1000, height: 500, crop: :fill) %>')" >
         </button>
       </form>
     </div>
+
 </div>
 
 </div>
