@@ -1,3 +1,26 @@
+
 <% @transactions.each do |transaction| %>
-  <%= transaction.book.title %>
+
+<div class="product">
+  <div class='product-upvote'>
+    <div class="product-arrow"></div>
+  </div>
+<% if transaction.book.photo? %>
+  <%= cl_image_tag transaction.book.photo.path, width: 200, height: 150, crop: :fill , class: "product-image hidden-xs"%>
+  <% else %>
+    <%= cl_image_tag "http://placehold.it/30x30", width: 200, height: 150, crop: :fill , class: "product-image hidden-xs"%>
+
+    <% end %>
+  <div class='product-body'>
+    <h3><%=transaction.book.title%></h3>
+    <p><%=transaction.book.author%></p>
+    <p>$<%=transaction.book.price%>.00</p></p>
+
+  </div>
+  <ul class="list-inline product-controls product-controls-hidden hidden-sm hidden-xs">
+    <li><a href=""><i class="fa fa-heart"></i></a></li>
+    <li><a href="">Review <%= transaction.user.email %></i></a></li>
+    <li><a href=""><i class="fa fa-star"></i></a></li>
+  </ul>
+</div>
 <%end%>
