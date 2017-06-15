@@ -15,33 +15,9 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <!-- Search form -->
-    <form action="" class="navbar-wagon-search">
-      <input type="text" class="navbar-wagon-search-input" placeholder="Search something">
-      <button type="submit" class="navbar-wagon-search-btn">
-        <i class="fa fa-search"></i>
-      </button>
-    </form>
 
     <!-- Text link -->
 
-    <%= link_to "Books", books_path, class: "navbar-wagon-item navbar-wagon-link"%>
-
-
-    <!-- Text link -->
-
-
-    <%= link_to 'My Purchases', my_sales_path, class: "navbar-wagon-item navbar-wagon-link" %>
-
-
-
-
-    <!-- Notification link-->
-    <a href="" class="navbar-wagon-item navbar-wagon-link">
-      <div class="badge-container">
-        <i class="fa fa-envelope-o"></i>
-        <div class="badge badge-blue">3</div>
-      </div>
-    </a>
 
 
     <!-- Button (call-to-action) -->
@@ -66,6 +42,25 @@
     <!-- Profile picture and dropdown -->
   <% if user_signed_in? %>
 
+    <form action="" class="navbar-wagon-search">
+      <input type="text" class="navbar-wagon-search-input" placeholder="Search something">
+      <button type="submit" class="navbar-wagon-search-btn">
+        <i class="fa fa-search"></i>
+      </button>
+    </form>
+
+      <%= link_to "Books", books_path, class: "navbar-wagon-item navbar-wagon-link"%>
+
+    <%= link_to 'Purchases', my_sales_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
+    <!-- Notification link-->
+    <a href="" class="navbar-wagon-item navbar-wagon-link">
+      <div class="badge-container">
+        <i class="fa fa-envelope-o"></i>
+        <div class="badge badge-blue">3</div>
+      </div>
+    </a>
+
   <div class="list-inline">
   <%=current_user.first_name || current_user.email %>
   <%=current_user.last_name %>
@@ -86,6 +81,7 @@
 
    <div class="navbar-container">
     <%= link_to "Log In", new_user_session_path %>
+
     <%= link_to "Sign Up", new_user_registration_path %>
   </div>
 
