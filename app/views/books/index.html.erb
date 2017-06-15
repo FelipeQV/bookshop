@@ -2,6 +2,7 @@
 width: 400, height: 300, crop: :fill) %>')" >
 <div class="banner-content">
   <h1>The book you need, at the price you want</h1>
+
     <p>Explore our best books</p>
 
     <%= form_tag(books_path, :method => "get", id: "search-form") do %>
@@ -11,6 +12,7 @@ width: 400, height: 300, crop: :fill) %>')" >
     <% if @books.blank? %>
       <h4>There are no books containing the term <%= params[:search] %>.</h4>
     <% end %>
+
 </div>
 
 </div>
