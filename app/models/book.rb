@@ -9,7 +9,7 @@ class Book < ApplicationRecord
   validates :author, presence: true
 
   def self.search(search)
-    where("title LIKE ?", "%#{search}%")
+    where("title LIKE ? OR author LIKE ?", "%#{search}%", "%#{search}%")
   end
 
 end

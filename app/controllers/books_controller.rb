@@ -8,7 +8,6 @@ class BooksController < ApplicationController
     else
       @books = Book.all.order("created_at DESC")
     end
-
   end
 
   def new
@@ -17,6 +16,18 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
+
+    @book_coordinates = { lat: @book.user.latitude, lng: @book.user.longitude }
+
+    @hash = Gmaps4rails.build_markers(@book.user) do |book, marker|
+      if book.latitude
+        marker.lat book.latitude
+        marker.lng book.longitude
+      else
+        marker.lat "27.777"
+        marker.lng "27.777"
+      end
+    end
   end
 
   def create
