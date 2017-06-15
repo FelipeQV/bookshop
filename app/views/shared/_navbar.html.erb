@@ -24,24 +24,6 @@
 
     <!-- Text link -->
 
-    <%= link_to "Books", books_path, class: "navbar-wagon-item navbar-wagon-link"%>
-
-
-    <!-- Text link -->
-
-
-    <%= link_to 'My Purchases', my_sales_path, class: "navbar-wagon-item navbar-wagon-link" %>
-
-
-
-
-    <!-- Notification link-->
-    <a href="" class="navbar-wagon-item navbar-wagon-link">
-      <div class="badge-container">
-        <i class="fa fa-envelope-o"></i>
-        <div class="badge badge-blue">3</div>
-      </div>
-    </a>
 
 
     <!-- Button (call-to-action) -->
@@ -65,6 +47,18 @@
   </div>
     <!-- Profile picture and dropdown -->
   <% if user_signed_in? %>
+
+      <%= link_to "Books", books_path, class: "navbar-wagon-item navbar-wagon-link"%>
+
+    <%= link_to 'Purchases', my_sales_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
+    <!-- Notification link-->
+    <a href="" class="navbar-wagon-item navbar-wagon-link">
+      <div class="badge-container">
+        <i class="fa fa-envelope-o"></i>
+        <div class="badge badge-blue">3</div>
+      </div>
+    </a>
 
   <div class="list-inline">
   <%=current_user.first_name || current_user.email %>

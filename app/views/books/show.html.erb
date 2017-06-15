@@ -1,6 +1,9 @@
 <div class="text-center">
   <h1><%= @book.title %></h1>
   <h2><%=@book.author%></h2>
+  <% if @book.photo? %>
+  <%= cl_image_tag @book.photo.path, width: 200, height: 300, crop: :fill %>
+  <% end %>
   <p><%="price: $"%><%=@book.price%></p>
   <br>
   <p><strong><%="Description: "%></strong><%=@book.description%></p>
@@ -8,10 +11,6 @@
 
     <%= link_to "buy book", new_book_transaction_path(@book), class: "btn btn-primary"%>
     <br>
-
-  <% if @book.photo? %>
-  <%= cl_image_tag @book.photo.path, width: 200, height: 300, crop: :fill %>
-  <% end %>
 
   <% if @book.user %>
   <%="Reviews for: "%><%= link_to @book.user.email || @book.user.first_name, user_path(@book.user) %>
