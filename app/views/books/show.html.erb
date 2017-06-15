@@ -1,23 +1,41 @@
-<div class="text-center">
-  <h1><%= @book.title %></h1>
-  <h2><%=@book.author%></h2>
-  <% if @book.photo? %>
-  <%= cl_image_tag @book.photo.path, width: 200, height: 300, crop: :fill %>
-  <% end %>
-  <p><%="price: $"%><%=@book.price%></p>
-  <br>
-  <p><strong><%="Description: "%></strong><%=@book.description%></p>
-  <br>
+<div class="container-showbook">
+  <div class="row ">
+    <div class="col-xs-12 col-sm-3">
+      <div class="form-show">
+        <h1><%= @book.title %></h1>
+        <h3>by <%=@book.author%></h3>
+        <% if @book.photo? %>
+        <%= cl_image_tag @book.photo.path, width: 200, height: 300, crop: :fill %>
+        <% end %>
+        <p><%="price: $"%><%=@book.price%></p>
 
-    <%= link_to "buy book", new_book_transaction_path(@book), class: "btn btn-primary"%>
-    <br>
 
-  <% if @book.user %>
-  <%="Reviews for: "%><%= link_to @book.user.email || @book.user.first_name, user_path(@book.user) %>
-  <% end %>
+      </div>
+      </div>
 
-    <%= link_to "home", books_path %>
+      <div class="col-xs-12 col-sm-6">
+        <div class="form-show">
+          <p><strong><%="Description: "%></strong><%=@book.description%></p>
+          <%= link_to "buy book", new_book_transaction_path(@book), class: "btn btn-primary"%>
+
+        </div>
+      </div>
+
+      <div class="col-xs-12">
+        <div class="form-show">
+          <% if @book.user %>
+          <%="Reviews for: "%><%= link_to @book.user.email || @book.user.first_name, user_path(@book.user) %>
+          <% end %>
+
+        </div>
+      </div>
+
+
   </div>
+</div>
 
-  <!-- books.sold -->
-  <!-- books.photo -->
+
+
+
+
+
