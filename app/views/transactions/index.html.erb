@@ -1,15 +1,9 @@
 
 <div class="text-center">
-<p>Development stage, dont be rough on jenn</p>
-<h1>My transactions index</h1>
-<br>
-<h2>transaction 1 </h2>
-<p>Transaction details</p>
-<p><%= link_to 'Review', new_user_review_path(@book.user)%></p>
-<br>
-<h2>transactions 2 </h2>
-<p>Transaction details</p>
-<p><%= link_to 'Review', new_user_review_path(@book.user)%></p>
+
+<%= @transactions.each do |transaction|%>
+<%=transaction.user.email%>
+<%end%>
 </div>
 
 
