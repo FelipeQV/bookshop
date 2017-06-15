@@ -8,6 +8,7 @@
   align-items: center;
   justify-content: center;
   box-shadow: 2px 4px 5px #888888;
+
 }
 .banner h1 {
   font-size: 50px;
@@ -19,4 +20,8 @@
   font-weight: lighter;
   color: rgba(255, 255, 255, 0.7);
   margin-bottom: 20px;
+}
+
+.banner-new {
+  height: 100vh;
 }
