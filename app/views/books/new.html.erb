@@ -10,14 +10,15 @@ width: 1000, height: 500, crop: :fill) %>')" >
 </div>
 </div>
 
-
+<div class="text-center">
 <div class="container-new-books">
   <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-      <div class="text-center">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+    <div class="card-white">
+
         <h2>Would you like to sell a book?</h2>
         <ul>
-          <li class="list-unstyled">
+          <li class="list-unstyled text-center">
 
             <%= simple_form_for @book do |f| %>
             <% f.error_notification %>
@@ -30,10 +31,10 @@ width: 1000, height: 500, crop: :fill) %>')" >
             <% end %>
           </li>
         </ul>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
 
-<%= link_to 'Back', books_path %>

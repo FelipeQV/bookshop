@@ -6,14 +6,19 @@ width: 1000, height: 500, crop: :fill) %>')" >
 
     <p>Explore our best books</p>
 
-    <%= form_tag(books_path, :method => "get", id: "search-form") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search Books" %>
-    <%= submit_tag "Search", :name => nil %>
-    <% end %>
-    <% if @books.blank? %>
-      <h4>There are no books containing the term <%= params[:search] %>.</h4>
-    <% end %>
 
+
+
+  <!-- New form -->
+    <div class="navbar-wagon-right hidden-xs hidden-sm align-center" >
+      <!-- Search form -->
+      <form action="/books" method="get" class="navbar-wagon-search center-nav">
+        <input type="text" name="search" class="navbar-wagon-search-input" placeholder="What book do you want?">
+        <button type="submit" class="navbar-wagon-search-btn">
+          <i class="fa fa-search"></i>
+        </button>
+      </form>
+    </div>
 
 </div>
 
