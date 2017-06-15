@@ -15,12 +15,6 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <!-- Search form -->
-    <form action="" class="navbar-wagon-search">
-      <input type="text" class="navbar-wagon-search-input" placeholder="Search something">
-      <button type="submit" class="navbar-wagon-search-btn">
-        <i class="fa fa-search"></i>
-      </button>
-    </form>
 
     <!-- Text link -->
 
@@ -47,6 +41,13 @@
   </div>
     <!-- Profile picture and dropdown -->
   <% if user_signed_in? %>
+
+    <form action="" class="navbar-wagon-search">
+      <input type="text" class="navbar-wagon-search-input" placeholder="Search something">
+      <button type="submit" class="navbar-wagon-search-btn">
+        <i class="fa fa-search"></i>
+      </button>
+    </form>
 
       <%= link_to "Books", books_path, class: "navbar-wagon-item navbar-wagon-link"%>
 
@@ -80,6 +81,7 @@
 
    <div class="navbar-container">
     <%= link_to "Log In", new_user_session_path %>
+
     <%= link_to "Sign Up", new_user_registration_path %>
   </div>
 
