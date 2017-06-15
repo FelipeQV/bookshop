@@ -8,4 +8,8 @@ class Book < ApplicationRecord
   validates :price, presence: true
   validates :author, presence: true
 
+  def self.search(search)
+    where("title LIKE ?", "%#{search}%")
+  end
+
 end

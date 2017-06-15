@@ -1,5 +1,13 @@
-new.html.erb
-<h1> im in transaction </h1>
 
-<%= @transaction.user.email %>
-<%= link_to 'My Transaction', book_transactions_path%>
+<div class= "text-center">
+<h1> Your transaction:</h1>
+<ul class = "list-unstyled">
+
+<li> <%="To: "%> <%= @transaction.user.email %> </li>
+</ul>
+
+
+<br>
+<br>
+<%= link_to 'See all my transactions', user_transactions_path%>
+</div>
