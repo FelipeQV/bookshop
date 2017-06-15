@@ -11,9 +11,9 @@ Review.destroy_all
 Book.destroy_all
 User.destroy_all
 
-user1 = User.create!(email: "test@test.com", password: "123456")
-user2 = User.create!(email: "test1@test.es", password: "1234567")
-user3 = User.create!(email: "test2@test.org", password: "1234568")
+user1 = User.create!(email: "test@test.com", password: "123456", address: '16 Villa Gaudelet, Paris')
+user2 = User.create!(email: "test1@test.es", password: "1234567", address: 'bosques de Robles 51, mexico df')
+user3 = User.create!(email: "test2@test.org", password: "1234568", address: 'Travessera de Dalt 33, Barcelona')
 
 Book.create!(title: "A bag of bones", price: 19, author: "Stephen King", user: user1)
 Book.create!(title: "Death on the Nile", price: 9, author: "Agatha Christie", user: user2)
