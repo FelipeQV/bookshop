@@ -2,9 +2,11 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to books_path, class: "navbar-wagon-brand" do %>
-  <a href="/" class="navbar-wagon-brand">
-    <img src="unspash.it/30/30" />
-  </a>
+  <%= cl_image_tag("book_icon_ovveyd",
+      width: 400, height: 300, crop: :fit) %>
+  <!-- <a href="/" class="navbar-wagon-brand">
+    <img src="imgur.com/a/ytG2V" />
+  </a> -->
 
   <% end %>
 
@@ -27,7 +29,9 @@
 
     <!-- Text link -->
 
+
     <%= link_to 'My Sales', my_sales_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
 
 
 

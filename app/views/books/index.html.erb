@@ -2,11 +2,17 @@
 width: 400, height: 300, crop: :fill) %>')" >
 <div class="banner-content">
   <h1>The book you need, at the price you want</h1>
-    <p> Explore our best books</p>
-  <input type="string" name="search" placeholder="find your book">
-    <br>
-    <br>
-    <a class="btn btn-primary btn-lg">Search</a>
+
+    <p>Explore our best books</p>
+
+    <%= form_tag(books_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Books" %>
+    <%= submit_tag "Search", :name => nil %>
+    <% end %>
+    <% if @books.blank? %>
+      <h4>There are no books containing the term <%= params[:search] %>.</h4>
+    <% end %>
+
 </div>
 
 </div>

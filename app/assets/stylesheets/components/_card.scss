@@ -42,8 +42,9 @@
   background: black;
   opacity: 0;
 }
-.card-link:hover{
-  opacity: 0.1;
+.card:hover{
+  opacity: 0.5;
+  filter: alpha(opacity=50);
 }
 
 .card-wrapper {
