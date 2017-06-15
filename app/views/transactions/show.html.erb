@@ -1,9 +1,20 @@
-Hello
-<h1>transactions show</h1>
-<%= @transaction.user.email %>
-<%= @transaction.book.title %>
-<p>Review</p>
-<h1>transactions 2 </h1>
-<p>Review</p>
 
+<div class= "text-center">
+<h1>Your transaction has done seccesfully</h1>
+<p>Transaction details:</p>
+<br>
+<ul class = "list-unstyled">
 
+<li><%= @transaction.book.photo %></li>
+<br>
+<li><strong><%= "Price: "%></strong><%= @transaction.book.price%><%="$"%></li>
+<br>
+<li><strong><%= "To user: "%></strong><%= @transaction.user.email %></li>
+<br>
+<li><strong><%= "Book: "%></strong><%= @transaction.book.title %></li>
+</ul>
+
+<br>
+<br>
+<%= link_to "See all my transactions", my_sales_path%>
+</div>
