@@ -8,7 +8,8 @@
 <% if transaction.book.photo? %>
   <%= cl_image_tag transaction.book.photo.path, width: 200, height: 150, crop: :fill , class: "product-image hidden-xs"%>
   <% else %>
-    <%= cl_image_tag "http://placehold.it/30x30", width: 200, height: 150, crop: :fill , class: "product-image hidden-xs"%>
+    <div style="padding: 50px"> <%= cl_image_tag("book_icon_ovveyd",
+      width: 150, height: 100, crop: :fit , class: "product-image-small hidden-xs")%></div>
 
     <% end %>
   <div class='product-body'>
