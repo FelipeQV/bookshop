@@ -53,19 +53,10 @@
 
     <%= link_to 'Purchases', my_sales_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
-    <!-- Notification link-->
-    <a href="" class="navbar-wagon-item navbar-wagon-link">
-      <div class="badge-container">
-        <i class="fa fa-envelope-o"></i>
-        <div class="badge badge-blue">3</div>
-      </div>
-    </a>
-
-  <div class="list-inline">
+  <div class="list-inline navbar-wagon-item navbar-wagon-link">
   <%=current_user.first_name || current_user.email %>
   <%=current_user.last_name %>
   </div>
-
     <div class="navbar-wagon-item">
       <div class="dropdown">
        <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
@@ -76,6 +67,15 @@
         </ul>
       </div>
     </div>
+    <!-- Notification link-->
+    <a href="" style="padding: 0;" class="navbar-wagon-item navbar-wagon-link align-right">
+      <div class="badge-container">
+        <i class="fa fa-envelope-o"></i>
+        <div class="badge badge-blue">3</div>
+      </div>
+    </a>
+
+
 
    <% else %>
 
