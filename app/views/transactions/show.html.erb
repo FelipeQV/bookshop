@@ -1,13 +1,18 @@
 
 <div class = "text-center">
 <h1>Your transaction has been done seccesfully</h1>
-<br>
-<br>
+
+
+
 <ul class = "list-unstyled">
-<li> <%=@transaction.book.photo%></li>
+
+<% picture = @transaction.book.photo? ? @transaction.book.photo.path : 'chris-lawton-236413_qwg3qs' %>
+<%= cl_image_tag(picture, width: 200, height: 300, crop: :fill)%>
 <li><strong><%= "Price: "%></strong> <%= @transaction.book.price%></li>
 <li><strong><%= "To user: "%></strong> <%= @transaction.user.email%></li>
 <li><strong><%= "Book: "%></strong> <%= @transaction.book.title%></li>
 </ul>
 
 </div>
+
+
