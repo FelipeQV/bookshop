@@ -1,6 +1,6 @@
 <% picture = book.photo? ? book.photo.path : 'chris-lawton-236413_qwg3qs' %>
 
-<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path picture, height: 500, width: 500, crop: :fit %>')">
+<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path picture %>')">
 
   <div class="card-category">Popular</div>
   <div class="card-description">
@@ -13,3 +13,5 @@
     <%end%>
   </div>
 </div>
+
+
