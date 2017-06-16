@@ -81,7 +81,20 @@
     width: 500px;
 }
 
-.form-show {
+.form-show-1 {
+    padding: 30px 20px;
+    background: #F7F7F7;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px #ECECEC;
+    margin: 0 0 60px 24px;
+    width: 420px;
+    // padding-right: 26px;
+
+
+
+}
+
+.form-show-2 {
     padding: 30px 20px;
     background: #F7F7F7;
     border-radius: 3px;
@@ -89,14 +102,30 @@
     margin: 0 0 60px 24px;
     width: 420px;
     padding-right: 26px;
+    // position: absolute;
+    // right: -7px;
 
 }
+
+.form-map {
+    border-radius: 3px;
+    margin: 20px 20px 70px 20px;
+    width: 450px;
+    // position: absolute;
+    // top: 275px;
+
+}
+
 
 .container-showbook {
-
+  position: relative;
   padding: 50px 30px;
-  margin-bottom: 110px;
+  margin-bottom: 200px;
+  margin-left: 90px;
+  margin-top: 50px;
+  left: 200px;
+  display: flex;
+  justify-content: space-between;
 }
-
 
 
