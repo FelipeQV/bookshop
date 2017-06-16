@@ -2,7 +2,6 @@ class ReviewsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
-    raise
     @seller = User.find(params[:user_id])
     @reviews = Review.where(user_id: @seller.id)
   end
