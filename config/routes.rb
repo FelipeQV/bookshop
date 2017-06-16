@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get "my_sales", to: "pages#my_sales"
 
   devise_for :users,
-    controllers: { omniauth_callbacks: 'users/omniauth_callbacks' },
+    controllers: { omniauth_callbacks: 'users/omniauth_callbacks', registrations: 'registrations' },
     path: "sessions"
 
 
@@ -22,4 +22,3 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 end
-
