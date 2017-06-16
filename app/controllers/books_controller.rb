@@ -46,6 +46,10 @@ class BooksController < ApplicationController
     redirect_to books_path
   end
 
+  def book_address
+    @book_address
+  end
+
 
 private
 
