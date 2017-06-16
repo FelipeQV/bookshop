@@ -12,13 +12,14 @@
 
       </div>
       </div>
-
+      <div class="row-show">
       <div class="col-xs-12 col-sm-6">
         <div class="form-show">
           <p><strong><%="Description: "%></strong><%=@book.description%></p>
           <%= link_to "buy book", new_book_transaction_path(@book), class: "btn btn-primary"%>
 
         </div>
+      </div>
       </div>
 
       <div class="col-xs-12">
