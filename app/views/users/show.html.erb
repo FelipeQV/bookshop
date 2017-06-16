@@ -3,10 +3,11 @@
 
 <div class="text-center">
 <h1><%= @user.email %></h1>
-
+  <% count = 0 %>
   <% @user.reviews.each do |review| %>
+  <% count += 1%>
   <ul class="list-inline">
-    <li><p> <%= review.content %></p></li>
+    <li><p><strong><%= count%> <%= ")"%></strong> <%= review.content %></p></li>
   </ul>
   <% end %>
 
