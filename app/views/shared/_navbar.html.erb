@@ -41,21 +41,18 @@
   </div>
     <!-- Profile picture and dropdown -->
   <% if user_signed_in? %>
+    <%= render "shared/search_bar" unless @hide_home_page%>
 
-    <form action="" class="navbar-wagon-search">
-      <input type="text" class="navbar-wagon-search-input" placeholder="Search something">
-      <button type="submit" class="navbar-wagon-search-btn">
-        <i class="fa fa-search"></i>
-      </button>
-    </form>
 
       <%= link_to "Books", books_path, class: "navbar-wagon-item navbar-wagon-link"%>
 
     <%= link_to 'Purchases', my_sales_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
   <div class="list-inline navbar-wagon-item navbar-wagon-link">
-  <%=current_user.first_name || current_user.email %>
+  <% user =  current_user.first_name || current_user.email%>
+  <%=link_to user, current_user %>
   <%=current_user.last_name %>
+
   </div>
     <div class="navbar-wagon-item">
       <div class="dropdown">

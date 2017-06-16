@@ -2,6 +2,7 @@ class BooksController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
+    @hide_home_page  = true
     @books = Book.all
     if params[:search]
       @books = Book.search(params[:search]).order("created_at DESC")
