@@ -49,9 +49,9 @@
     <%= link_to 'Purchases', my_sales_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
   <div class="list-inline navbar-wagon-item navbar-wagon-link">
-  <% user =  current_user.first_name || current_user.email%>
+  <% user =  current_user.first_name + current_user.last_name|| current_user.email%>
   <%=link_to user, current_user %>
-  <%=current_user.last_name %>
+
 
   </div>
     <div class="navbar-wagon-item">
