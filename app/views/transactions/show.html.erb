@@ -4,7 +4,7 @@
 
 
 
-<ul class = "list-unstyled">
+<ul class = "list-unstyled text-center">
 
 <% picture = @transaction.book.photo? ? @transaction.book.photo.path : 'chris-lawton-236413_qwg3qs' %>
 <%= cl_image_tag(picture, width: 200, height: 300, crop: :fill)%>

@@ -1,0 +1,26 @@
+.show {
+  height: 30vh ;
+  width: 30vh;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  color: white;
+  position: relative;
+  border-style: solid black;
+  margin: auto;
+}
+.show-book {
+  height: 30%;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.show-description {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.show-description h2 {
+  font-size: 24px;
+}
+
